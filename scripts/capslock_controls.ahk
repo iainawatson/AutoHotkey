@@ -1,3 +1,10 @@
+/*
+DEVELOPER NOTES
+- Want to block other keys from functioning whilst the capslock layer is active
+- Need to add the numlock . to the layer
+- The secondary layer still doesn't work
+*/
+
 #Requires AutoHotkey v2.0
 ; #NoTrayIcon ; Removes the tray icon when running
 
