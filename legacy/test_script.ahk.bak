@@ -1,0 +1,38 @@
+﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+
++^\:: Reload ; Reloads the script
+
++^8:: ;exports biblatex library from zotero and uploads in overleaf
+BlockInput, On
+if WinExist("Zotero")
+	WinActivate Zotero ;open zotero
+	send !f ;opens file menu
+	sleep 50 ;needs time to load menu
+    Send {up}{up} ;select the export function
+	Send {Enter}
+	sleep 50
+	Send {Enter}
+	Send D:\Iain\Desktop\Thesis.bib
+	Send {Enter}
+	;FileSelectFile "D:\Iain\Desktop\Thesis.bib"
+	if WinExist("Confirm Save As") ;overwrite file
+		WinActivate "Confirm Save As"
+		Send {left}{Enter}
+	sleep 1000	
+if WinExist("Overleaf")
+	WinActivate Overleaf
+	WinMaximize
+	sleep 500
+	MouseClick, left, 90, 120
+	sleep 500
+	MouseClick, left, 1140, 440
+	sleep 500
+	Send +2D:\Iain\Desktop\Thesis.bib+2
+	Send {Enter}
+	sleep 500
+	MouseClick, left, 1040, 350
+BlockInput, Off
+return

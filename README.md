@@ -1,5 +1,9 @@
-# AutoHotkey scripts
+# AutoHotkey Scripts
 
-Using the new version of AutoHotkey v2
+A collection of personal AutoHotkey tools and utilities.
 
-Legacy scripts were written using AutoHotkey v1
+## Structure
+- **/legacy/** Archived AutoHotkey scripts written using AutoHotkey v1
+
+## Notes
+The legacy scripts may not use the same conventions as v2 scripts
