@@ -7,11 +7,11 @@ A collection of personal [AutoHotkey](https://www.autohotkey.com/) tools and uti
 - **/scripts/** Scripts using AutoHotkey v2
 
 ## Use
-To load the scripts at start add them to the startup folder:
+To load the scripts at startup, add them to the startup folder:
 
-> Open the run dialog
+> Open the Run dialog
 >
->> Win + r
+>> Win + R
 >>
 >> Type `shell:startup`
 >
@@ -21,7 +21,9 @@ Optionally allow for the script to run in the background:
 
 > At the top of the script toggle the comment:
 >
->> `#NoTrayIcon`
+>> ```akh
+>> #NoTrayIcon
+>> ```
 
 ## Notes
 The legacy scripts may not use the same conventions as v2 scripts
