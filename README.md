@@ -10,13 +10,13 @@ A collection of personal [AutoHotkey](https://www.autohotkey.com/) tools and uti
 To load the scripts at start add them to the shell:startup folder
 
 > Open the run dialog
-    > Win + R
+    >> Win + R
 > Paste a link from the script into this folder
 
 Optionally allow for the script to run in the background
 
 > At the top of the script toggle the comment:
-    > '#NoTrayIcon ; Removes the tray icon when running'
+    >> '''#NoTrayIcon ; Removes the tray icon when running'''
 
 ## Notes
 The legacy scripts may not use the same conventions as v2 scripts
