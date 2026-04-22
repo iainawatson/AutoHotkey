@@ -1,8 +1,6 @@
 /*
 DEVELOPER NOTES
 - Want to block other keys from functioning whilst the capslock layer is active
-- Need to add the numlock . to the layer
-- The secondary layer still doesn't work
 */
 
 #Requires AutoHotkey v2.0
@@ -18,33 +16,43 @@ CapsLock:: {
 *CapsLock:: Send '{Blind}{vk07}'                     ; This forces capslock into a modifying key & blocks the alt/start menus
 
 /* 
-SECONDARY LAYER (Capslock + Shift) 
+HOTKEY LAYER
 */
 
-#HotIf GetKeyState("CapsLock", "P") && GetKeyState("RShift", "P")
-
-; ---- Extra navigation ----
-w:: Send '{PgUp}'
-s:: Send '{PgDn}'
-a:: Send '{Home}'
-d:: Send '{End}'
-
-; ---- delete key ----
-Space:: Send '{Delete}'
-
-#HotIf
-
-/* 
-PRIMARY LAYER (Capslock only)
-*/
+; ^+!# are the modifiers Ctrl, Shift, Alt and Win
 
 #HotIf GetKeyState("CapsLock", "P")
 
 ; ---- Keys for simple navigation ----
+; ---- wasd navigation ----
+
 w:: Send '{Up}'
 s:: Send '{Down}'
 a:: Send '{Left}' 
 d:: Send '{Right}'
+
++w:: Send '{PgUp}'
++s:: Send '{PgDn}'
++a:: Send '{Home}' 
++d:: Send '{End}'
+
+^a:: Send '^{Left}'
+^d:: Send '^{Right}'
+
+; ---- esdf navigation ----
+
+; e:: Send '{Up}'
+; d:: Send '{Down}'
+; s:: Send '{Left}' 
+; f:: Send '{Right}'
+
+; +e:: Send '{PgUp}'
+; +d:: Send '{PgDn}'
+; +s:: Send '{Home}' 
+; +f:: Send '{End}'
+
+; ^s:: Send '^{Left}'
+; ^f:: Send '^{Right}'
 
 ; ---- Keys for numpad layer ----
 j:: Send '{Numpad1}'
@@ -58,6 +66,7 @@ o:: Send '{Numpad6}'
 9:: Send '{Numpad9}'
 m:: Send '{Numpad0}'
 ,:: Send '{Numpad0}' ; replicates the long 0
+.:: Send '{NumpadDot}'
 y:: Send '{NumpadAdd}'
 h:: Send '{NumpadSub}'
 p:: Send '{NumpadMult}'
@@ -65,7 +74,9 @@ p:: Send '{NumpadMult}'
 [:: Send '{NumpadEnter}' ; replicates the longer enter
 ':: Send '{NumpadEnter}' 
 
-; ---- Easier backspace ----
+; ---- Easier backspace and delete ----
 Space:: Send '{Backspace}'
+^Space:: Send '^{Backspace}'
++Space:: Send '{Delete}'
 
 #HotIf
